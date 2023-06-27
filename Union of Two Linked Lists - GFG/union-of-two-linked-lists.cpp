@@ -46,11 +46,20 @@ class Solution
             head2=head2->next;
         }
         //sort(ans.begin(),ans.end());
-        Node* a;
-       // Node* b=a;
-        //int n=ans.size(),i=0;
-       for(auto x:ans) cout<<x<<" ";
-        return NULL;
+        Node* a=new Node(0);
+        Node* b=a;
+        Node*c;
+        
+       for(auto x:ans) {
+           a->data=x;
+           Node* t=new Node(x);
+           a->next=t;
+           c=a;
+           a=a->next;
+       }
+       c->next=NULL;
+      // free(a);
+        return b;
     }
 };
 
